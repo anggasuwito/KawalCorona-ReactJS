@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseURL = "http://localhost:3000/"
+const baseURL = "http://api.kawalcorona.com/"
 
 const getIndonesiaCoronaData = async () => {
     let datas = await axios.get(`${baseURL}indonesia/`)
