@@ -3,7 +3,7 @@ import { Table } from 'react-bootstrap'
 import Loading from '../../../components/Loading'
 
 export default function ListIndonesiaProvinsiCorona(props) {
-    const { indoCoronaData,isLoading } = props
+    const { indoCoronaData, isLoading } = props
     if (isLoading) {
         return (
             <div>
@@ -11,9 +11,25 @@ export default function ListIndonesiaProvinsiCorona(props) {
             </div>
         )
     }
+    let totalData =0
+    let listData = indoCoronaData.map((data, index) => {
+        totalData++
+        return (
+            <tr className="table-active">
+                <td>{index + 1}</td>
+                <td>{data.attributes.FID}</td>
+                <td>{data.attributes.Kode_Provi}</td>
+                <td>{data.attributes.Provinsi}</td>
+                <td>{data.attributes.Kasus_Posi}</td>
+                <td>{data.attributes.Kasus_Semb}</td>
+                <td>{data.attributes.Kasus_Meni}</td>
+            </tr>
+        )
+    })
     return (
         <div>
             <br /><h1 className="d-flex justify-content-center">Indonesia Per Province Corona Data</h1><br />
+            <h1 className="d-flex justify-content-center">Total Data : {totalData}</h1><br />
             <Table striped bordered hover>
                 <thead>
                     <tr className="table-active">
@@ -27,17 +43,7 @@ export default function ListIndonesiaProvinsiCorona(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {indoCoronaData.map((data, index) =>
-                        <tr className="table-active">
-                            <td>{index + 1}</td>
-                            <td>{data.attributes.FID}</td>
-                            <td>{data.attributes.Kode_Provi}</td>
-                            <td>{data.attributes.Provinsi}</td>
-                            <td>{data.attributes.Kasus_Posi}</td>
-                            <td>{data.attributes.Kasus_Semb}</td>
-                            <td>{data.attributes.Kasus_Meni}</td>
-                        </tr>
-                    )}
+                    {listData}
                 </tbody>
             </Table>
         </div>

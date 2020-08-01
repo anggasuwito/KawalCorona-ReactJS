@@ -16,6 +16,6 @@ describe('<GlobalCoronaContainer/>',()=>{
     })
     it('should have one child component on <GlobalCoronaContainer/>', () => {
         const wrapper = setup()
-        expect(wrapper.find(ListGlobalCorona).length).toBe(2)
+        expect(wrapper.find(ListGlobalCorona).length).toBe(1)
       })
 })
