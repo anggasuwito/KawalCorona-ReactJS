@@ -12,12 +12,10 @@ export default function GlobalCoronaContainer() {
 
     const loadData = () => {
         getGlobalCoronaData().then((res) => {
-            console.log(res);
             setGlobalData(res.data)
             setIsLoading(!isLoading)
         })
     }
-    console.log("global:", globalData);
     return (
         <div className="container-fluid">
             <ListGlobalCorona globalData={globalData} isLoading={isLoading} />

@@ -17,7 +17,6 @@ export default function IndonesiaCoronaContainer() {
             setIsLoading(!isLoading)
         })
     }
-    console.log("coba:", indoCoronaData);
     return (
         <div className="container-fluid">
             <ListIndonesiaProvinsiCorona indoCoronaData={indoCoronaData} isLoading={isLoading} />
