@@ -13,6 +13,7 @@ export default function ListGlobalCorona(props) {
     return (
         <div>
             <br /><h1 className="d-flex justify-content-center">Global Corona Data</h1><br />
+            <h1 className="d-flex justify-content-center">Total Data : {globalData.length}</h1><br />
             <Table striped bordered hover>
                 <thead>
                     <tr className="table-active">
