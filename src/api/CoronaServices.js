@@ -1,32 +1,34 @@
 import axios from 'axios';
 
+const baseURL = "http://localhost:3000/"
+
 const getIndonesiaCoronaData = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com/indonesia/")
+    let datas = await axios.get(`${baseURL}indonesia/`)
     return datas
 }
 
 const getGlobalCoronaData = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com")
+    let datas = await axios.get(`${baseURL}`)
     return datas
 }
 
 const getGlobalPositiveCorona = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com/positif/")
+    let datas = await axios.get(`${baseURL}positif/`)
     return datas
 }
 
 const getGlobalRecoverCorona = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com/sembuh")
+    let datas = await axios.get(`${baseURL}sembuh/`)
     return datas
 }
 
 const getGlobalDeathCorona = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com/meninggal")
+    let datas = await axios.get(`${baseURL}meninggal/`)
     return datas
 }
 
 const getCoronaByProvince = async () => {
-    let datas = await axios.get("https://api.kawalcorona.com/indonesia/provinsi/")
+    let datas = await axios.get(`${baseURL}indonesia/provinsi`)
     return datas
 }
 
